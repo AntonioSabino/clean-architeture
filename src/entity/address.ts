@@ -1,4 +1,4 @@
-export class Address {
+export default class Address {
   _street: string = ''
   _number: string = ''
   _zip: string = ''
