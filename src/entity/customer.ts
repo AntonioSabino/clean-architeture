@@ -14,7 +14,7 @@ export default class Customer {
 
   validate(): void {
     if (this._name.length === 0) {
-      throw new Error('Name must be at least 5 characters long')
+      throw new Error('Name is required')
     }
     if (this._id.length === 0) {
       throw new Error('Id is required')
@@ -33,8 +33,16 @@ export default class Customer {
     this._active = true
   }
 
+  isActivated(): boolean {
+    return this._active
+  }
+
   desactivate(): void {
     this._active = false
+  }
+
+  get name(): string {
+    return this._name
   }
 
   set address(address: Address) {
