@@ -20,11 +20,11 @@ describe('Order', () => {
 		const order = new Order('123', '123', [item])
 		const order2 = new Order('123', '123', [item, item2])
 
-		let total = order.calculateTotal()
+		let total = order.calculateTotalPrice()
 
 		expect(total).toBe(20)
 
-		total = order2.calculateTotal()
+		total = order2.calculateTotalPrice()
 
 		expect(total).toBe(60)
 	})
