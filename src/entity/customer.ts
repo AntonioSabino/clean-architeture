@@ -1,51 +1,64 @@
 import Address from './address'
 
 export default class Customer {
-  _id: string
-  _name: string = ''
-  _address!: Address
-  _active: boolean = false
+	private _id: string
+	private _name: string = ''
+	private _address!: Address
+	private _active: boolean = false
+	private _rewardPoints: number = 0
 
-  constructor(id: string, name: string) {
-    this._id = id
-    this._name = name
-    this.validate()
-  }
+	constructor(id: string, name: string) {
+		this._id = id
+		this._name = name
+		this.validate()
+	}
 
-  validate(): void {
-    if (this._name.length === 0) {
-      throw new Error('Name is required')
-    }
-    if (this._id.length === 0) {
-      throw new Error('Id is required')
-    }
-  }
+	get id(): string {
+		return this._id
+	}
 
-  changeName(name: string): void {
-    this._name = name
-    this.validate()
-  }
+	get rewardPoints(): number {
+		return this._rewardPoints
+	}
 
-  activate(): void {
-    if (this._address === undefined) {
-      throw new Error('Address is required')
-    }
-    this._active = true
-  }
+	validate(): void {
+		if (this._name.length === 0) {
+			throw new Error('Name is required')
+		}
+		if (this._id.length === 0) {
+			throw new Error('Id is required')
+		}
+	}
 
-  isActivated(): boolean {
-    return this._active
-  }
+	changeName(name: string): void {
+		this._name = name
+		this.validate()
+	}
 
-  desactivate(): void {
-    this._active = false
-  }
+	activate(): void {
+		if (this._address === undefined) {
+			throw new Error('Address is required')
+		}
+		this._active = true
+	}
 
-  get name(): string {
-    return this._name
-  }
+	isActivated(): boolean {
+		return this._active
+	}
 
-  set address(address: Address) {
-    this._address = address
-  }
+	desactivate(): void {
+		this._active = false
+	}
+
+	addRewardPoints(points: number): void {
+		this._rewardPoints += points
+	}
+
+	get name(): string {
+		return this._name
+	}
+
+	set address(address: Address) {
+		this._address = address
+	}
 }
