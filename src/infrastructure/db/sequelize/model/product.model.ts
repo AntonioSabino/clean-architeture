@@ -1,6 +1,6 @@
 import {
-	AutoIncrement,
 	Column,
+	DataType,
 	Model,
 	PrimaryKey,
 	Table,
@@ -12,7 +12,7 @@ import {
 })
 export default class ProductModel extends Model {
 	@PrimaryKey
-	@Column
+	@Column({ type: DataType.STRING, allowNull: false })
 	declare id: string
 
 	@Column({ allowNull: false })

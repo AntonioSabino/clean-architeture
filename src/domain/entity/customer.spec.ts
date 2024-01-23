@@ -19,8 +19,8 @@ describe('Customer', () => {
 
 	it('should activate customer', () => {
 		const customer = new Customer('123', 'Customer 123')
-		const address = new Address('Street 1', '190', '12345-123', 'City')
-		customer.address = address
+		const address = new Address('Street 1', 190, '12345-123', 'City')
+		customer.changeAddress(address)
 
 		customer.activate()
 

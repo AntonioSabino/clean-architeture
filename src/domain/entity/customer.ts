@@ -17,8 +17,16 @@ export default class Customer {
 		return this._id
 	}
 
+	get name(): string {
+		return this._name
+	}
+
 	get rewardPoints(): number {
 		return this._rewardPoints
+	}
+
+	get address(): Address {
+		return this._address
 	}
 
 	validate(): void {
@@ -54,11 +62,7 @@ export default class Customer {
 		this._rewardPoints += points
 	}
 
-	get name(): string {
-		return this._name
-	}
-
-	set address(address: Address) {
+	changeAddress(address: Address): void {
 		this._address = address
 	}
 }
