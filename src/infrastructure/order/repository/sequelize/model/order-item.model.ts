@@ -6,7 +6,7 @@ import {
 	PrimaryKey,
 	Table,
 } from 'sequelize-typescript'
-import ProductModel from './product.model'
+import ProductModel from '../../../../product/repository/sequelize/model/product.model'
 import OrderModel from './order.model'
 
 @Table({ tableName: 'order_items', timestamps: false })
