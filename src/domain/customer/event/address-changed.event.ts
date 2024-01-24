@@ -1,6 +1,6 @@
-import Address from '../../entity/address'
-import Customer from '../../entity/customer'
-import EventInterface from '../@shared/event.interface'
+import Address from '../value-object/address'
+import Customer from '../entity/customer'
+import EventInterface from '../../@shared/event/event.interface'
 
 export default class AddressChangedEvent implements EventInterface {
 	dataTimeOccurred: Date

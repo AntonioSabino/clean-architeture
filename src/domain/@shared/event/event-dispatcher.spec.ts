@@ -1,14 +1,14 @@
-import SendEmailWhenProductIsCreatedHandler from '../product/handler/send-email-when-product-is-created.handler'
+import SendEmailWhenProductIsCreatedHandler from '../../product/event/handler/send-email-when-product-is-created.handler'
 import EventDispatcher from './event-dispatcher'
-import ProductCreatedEvent from '../product/product-created.event'
-import Customer from '../../entity/customer'
-import CustomerCreatedEvent from '../customer/customer-created.event'
-import FirstConsoleLogCustomerCreatedHandler from '../customer/handler/first-console-log-customer-created.handler'
-import SecondConsoleLogCustomerCreatedHandler from '../customer/handler/second-console-log-customer-created.handler'
+import ProductCreatedEvent from '../../product/event/product-created.event'
+import Customer from '../../customer/entity/customer'
+import CustomerCreatedEvent from '../../customer/event/customer-created.event'
+import FirstConsoleLogCustomerCreatedHandler from '../../customer/event/handler/first-console-log-customer-created.handler'
+import SecondConsoleLogCustomerCreatedHandler from '../../customer/event/handler/second-console-log-customer-created.handler'
 import exp from 'constants'
-import AddressChangedEvent from '../customer/address-changed.event'
-import Address from '../../entity/address'
-import ConsoleLogAddressChangedHandler from '../customer/handler/console-log-address-changed.handle'
+import AddressChangedEvent from '../../customer/event/address-changed.event'
+import Address from '../../customer/value-object/address'
+import ConsoleLogAddressChangedHandler from '../../customer/event/handler/console-log-address-changed.handle'
 
 describe('EventDispatcher', () => {
 	let eventDispatcher: EventDispatcher
